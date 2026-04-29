@@ -35,8 +35,6 @@ def boolean_expressions():
 
     In this case, we can add an additional constraint that says that we don’t want the solution where a, b, and c are all false.
     """
-    print(boolean_expressions())
-
     clause_3 = Not(And(Not(a),Not(b),Not(c)))
     s.add(clause_3)
 
@@ -44,7 +42,6 @@ def boolean_expressions():
         case z3.sat:
             f_2_model = s.model()
             print(f_2_model)
-
 
     """
     This output says that the formula (a || !b) && (!a || c) will be true when b is false and c is true (it doesn’t matter what a is).
@@ -65,6 +62,7 @@ def boolean_expressions():
 
 boolean_expressions()
 
+boolean_expressions()
 
 """
 Z3 can find solutions to more than just SAT problems – it is an SMT solver.
